@@ -2,11 +2,11 @@
   "s3": {
     "stage": {
       "bucket": "projects-staging.seattletimes.com",
-      "path": ""
+      "path": "bloody-poser"
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": ""
+      "path": "2021/business/home-buying-list-flip"
     }
   },
   "title": "",
@@ -18,5 +18,5 @@
   "sheets": [],
   "docs": [],
   "embedded": true,
-  "production": false
+  "production": true
 }
