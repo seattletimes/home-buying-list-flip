@@ -1,5 +1,28 @@
 @import "seattletimes";
 
+.chart {
+    max-width: 800px;
+    margin: auto;
+
+    @media @mobile {
+        width: 100%;
+    }
+}
+
+.visible-mobile {
+    display: none !important;
+  }
+  
+  @media @mobile {
+    .visible-mobile {
+      display: inline !important;
+    }
+  
+    .hidden-mobile {
+      display: none !important;
+    }
+  }
+
 .flip {
     max-width: 1020px;
     margin: auto;
