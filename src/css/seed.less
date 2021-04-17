@@ -1,1 +1,119 @@
 @import "seattletimes";
+
+.flip {
+    max-width: 1020px;
+    margin: auto;
+    border-bottom: 0;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    @media @tablet {
+      display: inline-block;
+      padding-top: 10px;
+    }
+  }
+
+ /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+ .flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 200px;
+    // border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    width: 25%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 30px;
+    padding-bottom: 32%;
+    margin-bottom: 2%;
+
+    @media only screen and (max-width: 999px) {
+      height: 400px;
+      width: 33%;
+    }
+
+    @media @tablet {
+      width: 50%;
+      margin: auto;
+      height: 380px;
+    }
+
+    @media @mobile {
+      display: block;
+      width: 75%;
+      padding: 0 2%;
+    }
+
+    .city {
+        font-size: 16px;
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+        padding: 0 0 5px;
+    }
+
+    .text-flip {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 4px;
+    }
+
+    .details {
+        flex: 50%;
+        font-size: 14px;
+        margin: 0;
+        text-align: left;
+        padding: 0 0 4px;
+
+        @media @mobile {
+            padding: 0 5px 4px;
+        }
+    }
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+
+    @media @mobile {
+      height: 58%;
+    }
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 240px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    padding: 20px 10px 10px;
+    background-color: #97cbf0;
+    color: black;
+    transform: rotateY(180deg);
+  } 

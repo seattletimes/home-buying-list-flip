@@ -23,17 +23,20 @@ body {
   margin: 0;
   //remove 300ms click delay in Safari, AKA still the worst
   touch-action: manipulation;
+  position: relative; 
+
+  @media @darkMode {
+    color: white;
+  }
 }
 
-main {
-  display: block;
-}
 .interactive {
   padding: 10px;
   margin: 20px auto;
   border-top: 1px solid @df-light-gray;
   border-bottom: 1px solid @df-light-gray;
   font-family: @df-sans;
+  max-width: 760px;
 }
 
 a {
@@ -63,23 +66,42 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 60px;
   line-height: 30 / 28;
-  letter-spacing: -0.5px;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: 'PT Sans';
+  text-transform: uppercase;
+  
 
   @media @tablet {
     font-size: 42px;
     line-height: 46 / 42;
-    letter-spacing: -1px;
+    letter-spacing: 1px;
   }
 }
+
 h2 {
-  font-size: 24px;
+  font-family: 'PT Sans';
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 28px;
   line-height: @df-line-base;
+  font-style: italic;
+
+  @media @mobile {
+    font-size: 24px;
+    line-height: 46 / 42;
+  }
 }
+
 h3 {
-  font-size: 22px;
+  font-family: 'PT Sans';
+  font-size: 28px;
   line-height: 23 / 22;
+  text-align: center;
+  letter-spacing: 1px;
+
 }
 h4 {
   font-size: 16px;
@@ -114,10 +136,11 @@ h4 {
   font-family: @df-sans;
   font-size: 18px;
   font-weight: normal;
-  text-align: center;
+  text-align: left;
+  padding-bottom: 5px;
 }
 .source-container {
-  margin-top: 10px;
+  margin-top: 5px;
   &::after {
     clear: both;
     content: "";
@@ -180,45 +203,6 @@ h4 {
   width: 30px;
   &:hover .changes-color {
     fill: @df-off-black;
-  }
-}
-
-.ad {
-  text-align: center;
-  margin: 16px auto;
-
-  &.pending {
-    &::before {
-      display: block;
-      content: "";
-      background: @df-light-gray;
-    }
-
-    &[data-type="banner"],
-    &[data-type="bannerBottom"]{
-      max-width: 728px;
-      &::before {
-        padding-bottom: percentage(90 / 728);
-
-        @media @mobile {
-          padding-bottom: percentage(50 / 300);
-        }
-      }
-    }
-
-    &[data-type="tall"] {
-      max-width: 300px;
-      &::before {
-        padding-bottom: percentage(600 / 300);
-      }
-    }
-
-    &[data-type="square"] {
-      max-width: 300px;
-      &::before {
-        padding-bottom: percentage(250 / 300);
-      }
-    }
   }
 }
 
